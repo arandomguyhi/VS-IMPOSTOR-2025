@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="redCrashout.png">
+	<!-- Created with Adobe Animate version 24.0.8.70 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="down pose0000" x="0" y="0" width="471" height="264" frameX="-1" frameY="-4" frameWidth="478" frameHeight="268"/>
+	<SubTexture name="down pose0001" x="0" y="0" width="471" height="264" frameX="-1" frameY="-4" frameWidth="478" frameHeight="268"/>
+	<SubTexture name="down pose0002" x="476" y="0" width="478" height="266" frameX="0" frameY="0" frameWidth="478" frameHeight="268"/>
+	<SubTexture name="down pose0003" x="476" y="0" width="478" height="266" frameX="0" frameY="0" frameWidth="478" frameHeight="268"/>
+	<SubTexture name="down pose0004" x="476" y="0" width="478" height="266" frameX="0" frameY="0" frameWidth="478" frameHeight="268"/>
+	<SubTexture name="idle0000" x="959" y="0" width="386" height="303" frameX="-7" frameY="-19" frameWidth="397" frameHeight="323"/>
+	<SubTexture name="idle0001" x="959" y="0" width="386" height="303" frameX="-7" frameY="-19" frameWidth="397" frameHeight="323"/>
+	<SubTexture name="idle0002" x="1350" y="0" width="382" height="309" frameX="-9" frameY="-14" frameWidth="397" frameHeight="323"/>
+	<SubTexture name="idle0003" x="1350" y="0" width="382" height="309" frameX="-9" frameY="-14" frameWidth="397" frameHeight="323"/>
+	<SubTexture name="idle0004" x="1737" y="0" width="386" height="320" frameX="-7" frameY="-3" frameWidth="397" frameHeight="323"/>
+	<SubTexture name="idle0005" x="1737" y="0" width="386" height="320" frameX="-7" frameY="-3" frameWidth="397" frameHeight="323"/>
+	<SubTexture name="idle0006" x="2128" y="0" width="394" height="323" frameX="-2" frameY="0" frameWidth="397" frameHeight="323"/>
+	<SubTexture name="idle0007" x="2128" y="0" width="394" height="323" frameX="-2" frameY="0" frameWidth="397" frameHeight="323"/>
+	<SubTexture name="idle0008" x="2527" y="0" width="397" height="323"/>
+	<SubTexture name="idle0009" x="2527" y="0" width="397" height="323"/>
+	<SubTexture name="idle0010" x="2527" y="0" width="397" height="323"/>
+	<SubTexture name="idle0011" x="2527" y="0" width="397" height="323"/>
+	<SubTexture name="idle0012" x="2527" y="0" width="397" height="323"/>
+	<SubTexture name="idle0013" x="2527" y="0" width="397" height="323"/>
+	<SubTexture name="left pose0000" x="2929" y="0" width="542" height="327" frameX="-6" frameY="0" frameWidth="548" frameHeight="327"/>
+	<SubTexture name="left pose0001" x="2929" y="0" width="542" height="327" frameX="-6" frameY="0" frameWidth="548" frameHeight="327"/>
+	<SubTexture name="left pose0002" x="3476" y="0" width="507" height="311" frameX="0" frameY="-7" frameWidth="548" frameHeight="327"/>
+	<SubTexture name="right pose0000" x="0" y="332" width="519" height="301" frameX="-8" frameY="-3" frameWidth="527" frameHeight="305"/>
+	<SubTexture name="right pose0001" x="0" y="332" width="519" height="301" frameX="-8" frameY="-3" frameWidth="527" frameHeight="305"/>
+	<SubTexture name="right pose0002" x="524" y="332" width="525" height="305" frameX="0" frameY="0" frameWidth="527" frameHeight="305"/>
+	<SubTexture name="right pose0003" x="524" y="332" width="525" height="305" frameX="0" frameY="0" frameWidth="527" frameHeight="305"/>
+	<SubTexture name="turn angry0000" x="1054" y="332" width="408" height="334" frameX="-48" frameY="-92" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0001" x="1467" y="332" width="408" height="332" frameX="-46" frameY="-91" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0002" x="1467" y="332" width="408" height="332" frameX="-46" frameY="-91" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0003" x="1880" y="332" width="425" height="322" frameX="-46" frameY="-95" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0004" x="1880" y="332" width="425" height="322" frameX="-46" frameY="-95" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0005" x="2310" y="332" width="418" height="323" frameX="-49" frameY="-95" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0006" x="2733" y="332" width="416" height="323" frameX="-51" frameY="-95" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0007" x="3154" y="332" width="418" height="323" frameX="-51" frameY="-95" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0008" x="3577" y="332" width="419" height="323" frameX="-50" frameY="-95" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0009" x="0" y="671" width="419" height="323" frameX="-50" frameY="-95" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0010" x="424" y="671" width="418" height="323" frameX="-51" frameY="-95" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0011" x="3154" y="332" width="418" height="323" frameX="-51" frameY="-95" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0012" x="847" y="671" width="419" height="323" frameX="-50" frameY="-95" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0013" x="0" y="671" width="419" height="323" frameX="-50" frameY="-95" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0014" x="424" y="671" width="418" height="323" frameX="-51" frameY="-95" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0015" x="3577" y="332" width="419" height="323" frameX="-50" frameY="-95" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0016" x="1271" y="671" width="423" height="320" frameX="-50" frameY="-98" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0017" x="1699" y="671" width="404" height="322" frameX="-51" frameY="-95" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0018" x="2108" y="671" width="405" height="322" frameX="-50" frameY="-95" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0019" x="2518" y="671" width="422" height="415" frameX="-40" frameY="0" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0020" x="2518" y="671" width="422" height="415" frameX="-40" frameY="0" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0021" x="2945" y="671" width="481" height="366" frameX="-2" frameY="-49" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0022" x="3431" y="671" width="493" height="323" frameX="-2" frameY="-92" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0023" x="0" y="1091" width="356" height="383" frameX="0" frameY="-94" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0024" x="0" y="1091" width="356" height="383" frameX="0" frameY="-94" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0025" x="361" y="1091" width="353" height="365" frameX="-4" frameY="-96" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0026" x="361" y="1091" width="353" height="365" frameX="-4" frameY="-96" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0027" x="361" y="1091" width="353" height="365" frameX="-4" frameY="-96" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0028" x="361" y="1091" width="353" height="365" frameX="-4" frameY="-96" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0029" x="361" y="1091" width="353" height="365" frameX="-4" frameY="-96" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0030" x="361" y="1091" width="353" height="365" frameX="-4" frameY="-96" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0031" x="361" y="1091" width="353" height="365" frameX="-4" frameY="-96" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0032" x="361" y="1091" width="353" height="365" frameX="-4" frameY="-96" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0033" x="361" y="1091" width="353" height="365" frameX="-4" frameY="-96" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0034" x="361" y="1091" width="353" height="365" frameX="-4" frameY="-96" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0035" x="361" y="1091" width="353" height="365" frameX="-4" frameY="-96" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0036" x="361" y="1091" width="353" height="365" frameX="-4" frameY="-96" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0037" x="361" y="1091" width="353" height="365" frameX="-4" frameY="-96" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0038" x="361" y="1091" width="353" height="365" frameX="-4" frameY="-96" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0039" x="361" y="1091" width="353" height="365" frameX="-4" frameY="-96" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0040" x="361" y="1091" width="353" height="365" frameX="-4" frameY="-96" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0041" x="361" y="1091" width="353" height="365" frameX="-4" frameY="-96" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0042" x="361" y="1091" width="353" height="365" frameX="-4" frameY="-96" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0043" x="361" y="1091" width="353" height="365" frameX="-4" frameY="-96" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0044" x="361" y="1091" width="353" height="365" frameX="-4" frameY="-96" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0045" x="361" y="1091" width="353" height="365" frameX="-4" frameY="-96" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0046" x="361" y="1091" width="353" height="365" frameX="-4" frameY="-96" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="turn angry0047" x="361" y="1091" width="353" height="365" frameX="-4" frameY="-96" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="up pose0000" x="719" y="1091" width="438" height="340" frameX="-4" frameY="0" frameWidth="463" frameHeight="340"/>
+	<SubTexture name="up pose0001" x="719" y="1091" width="438" height="340" frameX="-4" frameY="0" frameWidth="463" frameHeight="340"/>
+	<SubTexture name="up pose0002" x="1162" y="1091" width="463" height="325" frameX="0" frameY="-14" frameWidth="463" frameHeight="340"/>
+	<SubTexture name="up pose0003" x="1162" y="1091" width="463" height="325" frameX="0" frameY="-14" frameWidth="463" frameHeight="340"/>
+	<SubTexture name="vote notice0000" x="1630" y="1091" width="393" height="323" frameX="-18" frameY="-4" frameWidth="414" frameHeight="335"/>
+	<SubTexture name="vote notice0001" x="1630" y="1091" width="393" height="323" frameX="-18" frameY="-4" frameWidth="414" frameHeight="335"/>
+	<SubTexture name="vote notice0002" x="2028" y="1091" width="393" height="320" frameX="-18" frameY="-7" frameWidth="414" frameHeight="335"/>
+	<SubTexture name="vote notice0003" x="2028" y="1091" width="393" height="320" frameX="-18" frameY="-7" frameWidth="414" frameHeight="335"/>
+	<SubTexture name="vote notice0004" x="2426" y="1091" width="398" height="322" frameX="-16" frameY="-4" frameWidth="414" frameHeight="335"/>
+	<SubTexture name="vote notice0005" x="2426" y="1091" width="398" height="322" frameX="-16" frameY="-4" frameWidth="414" frameHeight="335"/>
+	<SubTexture name="vote notice0006" x="2426" y="1091" width="398" height="322" frameX="-16" frameY="-4" frameWidth="414" frameHeight="335"/>
+	<SubTexture name="vote notice0007" x="2829" y="1091" width="406" height="331" frameX="-3" frameY="-3" frameWidth="414" frameHeight="335"/>
+	<SubTexture name="vote notice0008" x="3240" y="1091" width="407" height="335" frameX="-1" frameY="0" frameWidth="414" frameHeight="335"/>
+	<SubTexture name="vote notice0009" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0010" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0011" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0012" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0013" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0014" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0015" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0016" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0017" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0018" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0019" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0020" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0021" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0022" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0023" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0024" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0025" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0026" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0027" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0028" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0029" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0030" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0031" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0032" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0033" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0034" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0035" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0036" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0037" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0038" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0039" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0040" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0041" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0042" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0043" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0044" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0045" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0046" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0047" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0048" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0049" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0050" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0051" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0052" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0053" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0054" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0055" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0056" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0057" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0058" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0059" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0060" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0061" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0062" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0063" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0064" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0065" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0066" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0067" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0068" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0069" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0070" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0071" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0072" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0073" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0074" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0075" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0076" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0077" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0078" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0079" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0080" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0081" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0082" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0083" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0084" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0085" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0086" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0087" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0088" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0089" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0090" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0091" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0092" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0093" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0094" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0095" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0096" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0097" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0098" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0099" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0100" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0101" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0102" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0103" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0104" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0105" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0106" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0107" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0108" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0109" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0110" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+	<SubTexture name="vote notice0111" x="1054" y="332" width="408" height="334" frameX="0" frameY="-1" frameWidth="495" frameHeight="477"/>
+</TextureAtlas>

@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="gf.png">
+	<!-- Created with Adobe Animate version 24.0.8.70 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="gf clap loop0000" x="0" y="0" width="254" height="472" frameX="0" frameY="-2" frameWidth="262" frameHeight="476"/>
+	<SubTexture name="gf clap loop0001" x="0" y="0" width="254" height="472" frameX="0" frameY="-2" frameWidth="262" frameHeight="476"/>
+	<SubTexture name="gf clap loop0002" x="0" y="0" width="254" height="472" frameX="0" frameY="-2" frameWidth="262" frameHeight="476"/>
+	<SubTexture name="gf clap loop0003" x="259" y="0" width="250" height="474" frameX="-4" frameY="0" frameWidth="262" frameHeight="476"/>
+	<SubTexture name="gf clap loop0004" x="259" y="0" width="250" height="474" frameX="-4" frameY="0" frameWidth="262" frameHeight="476"/>
+	<SubTexture name="gf clap loop0005" x="514" y="0" width="257" height="475" frameX="-5" frameY="-1" frameWidth="262" frameHeight="476"/>
+	<SubTexture name="gf clap loop0006" x="514" y="0" width="257" height="475" frameX="-5" frameY="-1" frameWidth="262" frameHeight="476"/>
+	<SubTexture name="gf clap loop0007" x="514" y="0" width="257" height="475" frameX="-5" frameY="-1" frameWidth="262" frameHeight="476"/>
+	<SubTexture name="gf clap loop0008" x="776" y="0" width="251" height="475" frameX="-6" frameY="-1" frameWidth="262" frameHeight="476"/>
+	<SubTexture name="gf clap loop0009" x="776" y="0" width="251" height="475" frameX="-6" frameY="-1" frameWidth="262" frameHeight="476"/>
+	<SubTexture name="gf gunned0000" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0001" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0002" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0003" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0004" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0005" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0006" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0007" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0008" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0009" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0010" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0011" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0012" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0013" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0014" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0015" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0016" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0017" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0018" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0019" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0020" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0021" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0022" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0023" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0024" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0025" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0026" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0027" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0028" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0029" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0030" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0031" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0032" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0033" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0034" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0035" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0036" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0037" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0038" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0039" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf gunned0040" x="1032" y="0" width="335" height="461"/>
+	<SubTexture name="gf idle look left0000" x="1372" y="0" width="340" height="465" frameX="-8" frameY="-13" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0001" x="1717" y="0" width="340" height="465" frameX="-8" frameY="-13" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0002" x="1717" y="0" width="340" height="465" frameX="-8" frameY="-13" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0003" x="2062" y="0" width="336" height="468" frameX="-8" frameY="-11" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0004" x="2062" y="0" width="336" height="468" frameX="-8" frameY="-11" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0005" x="2062" y="0" width="336" height="468" frameX="-8" frameY="-11" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0006" x="2403" y="0" width="338" height="475" frameX="-5" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0007" x="2403" y="0" width="338" height="475" frameX="-5" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0008" x="2403" y="0" width="338" height="475" frameX="-5" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0009" x="2746" y="0" width="337" height="480" frameX="-7" frameY="0" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0010" x="2746" y="0" width="337" height="480" frameX="-7" frameY="0" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0011" x="2746" y="0" width="337" height="480" frameX="-7" frameY="0" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0012" x="3088" y="0" width="341" height="475" frameX="-1" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0013" x="3088" y="0" width="341" height="475" frameX="-1" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0014" x="3434" y="0" width="336" height="470" frameX="-2" frameY="-10" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0015" x="0" y="485" width="336" height="470" frameX="-2" frameY="-10" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0016" x="0" y="485" width="336" height="470" frameX="-2" frameY="-10" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0017" x="341" y="485" width="339" height="469" frameX="0" frameY="-8" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0018" x="341" y="485" width="339" height="469" frameX="0" frameY="-8" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0019" x="341" y="485" width="339" height="469" frameX="0" frameY="-8" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0020" x="685" y="485" width="338" height="475" frameX="-1" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0021" x="685" y="485" width="338" height="475" frameX="-1" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0022" x="685" y="485" width="338" height="475" frameX="-1" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0023" x="1028" y="485" width="335" height="480" frameX="-7" frameY="0" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0024" x="1028" y="485" width="335" height="480" frameX="-7" frameY="0" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0025" x="1028" y="485" width="335" height="480" frameX="-7" frameY="0" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0026" x="1368" y="485" width="342" height="475" frameX="-4" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look left0027" x="1715" y="485" width="344" height="475" frameX="-4" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0000" x="2064" y="485" width="340" height="465" frameX="-8" frameY="-13" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0001" x="2409" y="485" width="340" height="465" frameX="-8" frameY="-13" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0002" x="2409" y="485" width="340" height="465" frameX="-8" frameY="-13" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0003" x="2754" y="485" width="336" height="468" frameX="-8" frameY="-11" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0004" x="2754" y="485" width="336" height="468" frameX="-8" frameY="-11" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0005" x="2754" y="485" width="336" height="468" frameX="-8" frameY="-11" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0006" x="3095" y="485" width="338" height="475" frameX="-5" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0007" x="3095" y="485" width="338" height="475" frameX="-5" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0008" x="3095" y="485" width="338" height="475" frameX="-5" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0009" x="3438" y="485" width="337" height="480" frameX="-7" frameY="0" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0010" x="3438" y="485" width="337" height="480" frameX="-7" frameY="0" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0011" x="3438" y="485" width="337" height="480" frameX="-7" frameY="0" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0012" x="0" y="970" width="341" height="475" frameX="-1" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0013" x="0" y="970" width="341" height="475" frameX="-1" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0014" x="346" y="970" width="336" height="470" frameX="-2" frameY="-10" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0015" x="687" y="970" width="336" height="470" frameX="-2" frameY="-10" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0016" x="687" y="970" width="336" height="470" frameX="-2" frameY="-10" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0017" x="1028" y="970" width="339" height="469" frameX="0" frameY="-8" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0018" x="1028" y="970" width="339" height="469" frameX="0" frameY="-8" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0019" x="1028" y="970" width="339" height="469" frameX="0" frameY="-8" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0020" x="1372" y="970" width="338" height="475" frameX="-1" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0021" x="1372" y="970" width="338" height="475" frameX="-1" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0022" x="1372" y="970" width="338" height="475" frameX="-1" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0023" x="1715" y="970" width="335" height="480" frameX="-7" frameY="0" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0024" x="1715" y="970" width="335" height="480" frameX="-7" frameY="0" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0025" x="1715" y="970" width="335" height="480" frameX="-7" frameY="0" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0026" x="2055" y="970" width="342" height="475" frameX="-4" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle look right0027" x="2402" y="970" width="344" height="475" frameX="-4" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0000" x="2751" y="970" width="340" height="465" frameX="-8" frameY="-13" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0001" x="3096" y="970" width="340" height="465" frameX="-8" frameY="-13" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0002" x="3441" y="970" width="340" height="470" frameX="-8" frameY="-8" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0003" x="0" y="1455" width="336" height="471" frameX="-8" frameY="-8" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0004" x="0" y="1455" width="336" height="471" frameX="-8" frameY="-8" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0005" x="341" y="1455" width="336" height="469" frameX="-8" frameY="-11" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0006" x="682" y="1455" width="338" height="475" frameX="-5" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0007" x="682" y="1455" width="338" height="475" frameX="-5" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0008" x="682" y="1455" width="338" height="475" frameX="-5" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0009" x="1025" y="1455" width="337" height="479" frameX="-7" frameY="-1" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0010" x="1025" y="1455" width="337" height="479" frameX="-7" frameY="-1" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0011" x="1025" y="1455" width="337" height="479" frameX="-7" frameY="-1" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0012" x="1367" y="1455" width="341" height="474" frameX="-1" frameY="-3" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0013" x="1367" y="1455" width="341" height="474" frameX="-1" frameY="-3" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0014" x="1713" y="1455" width="336" height="470" frameX="-2" frameY="-10" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0015" x="2054" y="1455" width="336" height="470" frameX="-2" frameY="-10" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0016" x="2054" y="1455" width="336" height="470" frameX="-2" frameY="-10" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0017" x="2395" y="1455" width="339" height="469" frameX="0" frameY="-8" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0018" x="2395" y="1455" width="339" height="469" frameX="0" frameY="-8" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0019" x="2395" y="1455" width="339" height="469" frameX="0" frameY="-8" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0020" x="2739" y="1455" width="338" height="474" frameX="-1" frameY="-3" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0021" x="2739" y="1455" width="338" height="474" frameX="-1" frameY="-3" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0022" x="2739" y="1455" width="338" height="474" frameX="-1" frameY="-3" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0023" x="3082" y="1455" width="335" height="480" frameX="-7" frameY="0" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0024" x="3082" y="1455" width="335" height="480" frameX="-7" frameY="0" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0025" x="3082" y="1455" width="335" height="480" frameX="-7" frameY="0" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0026" x="3422" y="1455" width="342" height="475" frameX="-4" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn left0027" x="0" y="1940" width="344" height="475" frameX="-4" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0000" x="2751" y="970" width="340" height="465" frameX="-8" frameY="-13" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0001" x="3096" y="970" width="340" height="465" frameX="-8" frameY="-13" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0002" x="349" y="1940" width="340" height="470" frameX="-8" frameY="-8" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0003" x="694" y="1940" width="336" height="471" frameX="-8" frameY="-8" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0004" x="694" y="1940" width="336" height="471" frameX="-8" frameY="-8" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0005" x="1035" y="1940" width="336" height="469" frameX="-8" frameY="-11" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0006" x="1376" y="1940" width="338" height="475" frameX="-5" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0007" x="1376" y="1940" width="338" height="475" frameX="-5" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0008" x="1376" y="1940" width="338" height="475" frameX="-5" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0009" x="1719" y="1940" width="337" height="479" frameX="-7" frameY="-1" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0010" x="1719" y="1940" width="337" height="479" frameX="-7" frameY="-1" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0011" x="1719" y="1940" width="337" height="479" frameX="-7" frameY="-1" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0012" x="2061" y="1940" width="341" height="474" frameX="-1" frameY="-3" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0013" x="2061" y="1940" width="341" height="474" frameX="-1" frameY="-3" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0014" x="2407" y="1940" width="336" height="470" frameX="-2" frameY="-10" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0015" x="2748" y="1940" width="336" height="470" frameX="-2" frameY="-10" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0016" x="2748" y="1940" width="336" height="470" frameX="-2" frameY="-10" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0017" x="3089" y="1940" width="339" height="469" frameX="0" frameY="-8" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0018" x="3089" y="1940" width="339" height="469" frameX="0" frameY="-8" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0019" x="3089" y="1940" width="339" height="469" frameX="0" frameY="-8" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0020" x="3433" y="1940" width="338" height="474" frameX="-1" frameY="-3" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0021" x="3433" y="1940" width="338" height="474" frameX="-1" frameY="-3" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0022" x="3433" y="1940" width="338" height="474" frameX="-1" frameY="-3" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0023" x="0" y="2424" width="335" height="480" frameX="-7" frameY="0" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0024" x="0" y="2424" width="335" height="480" frameX="-7" frameY="0" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0025" x="0" y="2424" width="335" height="480" frameX="-7" frameY="0" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0026" x="340" y="2424" width="342" height="475" frameX="-4" frameY="-2" frameWidth="348" frameHeight="480"/>
+	<SubTexture name="gf idle turn right0027" x="687" y="2424" width="344" height="475" frameX="-4" frameY="-2" frameWidth="348" frameHeight="480"/>
+</TextureAtlas>
