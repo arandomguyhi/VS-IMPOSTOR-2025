@@ -17,17 +17,4 @@ function onCreatePost()
     end
 
     setProperty('comboGroup.visible', false)
-
-    makeLuaText('rateText', 'SUS!', getProperty('rateText.width'), defaultOpponentStrumX3 + 160, defaultOpponentStrumY3 + 25)
-    setTextFont('rateText', 'pixel.ttf')
-    setTextSize('rateText', 56)
-    addLuaText('rateText')
-
-    makeAnimatedLuaSprite('cardBar', 'hud/healthBarFG', 0, screenHeight + getProperty('cardBar.width'))
-    addAnimationByPrefix('cardBar', 'idle', 'healthbar', 24, true)
-    playAnim('cardBar', 'idle')
-    scaleObject('cardBar', 0.5, 0.5)
-    setObjectCamera('cardBar', 'hud')
-    screenCenter('cardBar', 'X')
-    addLuaSprite('cardBar')
 end

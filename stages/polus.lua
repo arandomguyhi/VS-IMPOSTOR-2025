@@ -1,54 +1,6 @@
---[[import flixel.FlxSprite;
-
-import openfl.filters.ShaderFilter;
-
-import flixel.FlxG;
-import flixel.text.FlxText;
-import flixel.util.FlxTimer;
-import flixel.math.FlxMath;
-import flixel.ui.FlxBar;
-
-import funkin.objects.SnowEmitter;
-import funkin.objects.shader.OverlayShader;
-import funkin.data.ClientPrefs;
-import funkin.utils.CameraUtil;
-import funkin.objects.BGSprite;
-
-var snowAlpha = 0;
-var ext:String = 'stage/polus/'; // Edit polus to your stage name.
-var vignette:FlxSprite;
-var snow:FlxSprite;
-var rose:FlxSprite;
-var boomBox:BGSprite;
-var blackSprite:FlxSprite;
-var nigga:FlxSprite;
-var singAnimations = ['singLEFT', 'singDOWN', 'singUP', 'singRIGHT'];
-var evilCam = FlxCamera;
-var anotherCam = FlxCamera;
-var bfVoters:FlxTypedGroup;
-var redVoters:FlxTypedGroup;
-
-var everyoneLook:String = ''; // Set this to -peep WHEN THEY START YAPPING
-var p = 0;
-/*
-	0 - BF
-	1 - RED
-	2 - GREEN
-	3 - DETECTIVE
-	4 - LIME
-	5 - PURPLE
-	6 - CYAN
-	7 - ROSE
- */
-var rv:Int = 0;
-var bv:Int = 0;
-var roseTable:FlxSprite = null;
-var greenTable:FlxSprite = null;
-
-// character zIndex's are 12]]
-
 luaDebugMode = true
 
+setVar('snowAlpha', 0)
 local ext = 'stage/polus/'
 
 local everyoneLook = ''
@@ -76,6 +28,9 @@ function onCreate()
 
 	-- 2
     makeAnimatedLuaSprite('floor', ext..'bg2', -1410, -139) addAnimationByPrefix('floor', 'bg', 'groundnew', 0, false)
+
+	createInstance('snowEmitter', 'flixel.group.FlxTypedSpriteGroup', {})
+	addInstance('snowEmitter', true)
 
 	-- 3
     makeAnimatedLuaSprite('thingy', ext..'guylmao', 2468, -115)
@@ -111,10 +66,6 @@ function onCreate()
 end
 
 function onCreatePost()
-	--setObjectOrder('dadGroup', 12)
-	--setObjectOrder('gfGroup', 12)
-	--setObjectOrder('boyfriendGroup', 12)
-
     if songName:lower() == 'sussus moogus' then
         setProperty('isCameraOnForcedPos', true)
         setCameraScroll(1025, -800)
@@ -135,6 +86,8 @@ function onCreatePost()
 		setProperty('cyan.alpha', 1)
 		setProperty('rose.alpha', 1)
 	end
+
+	setVar('snowAlpha', (songName == 'Sussus Moogus' and 0 or 1))
 
 	if not lowQuality then
 		makeAnimatedLuaSprite('evilGreen', ext..'green', -550, 725)
@@ -171,12 +124,66 @@ function onCreatePost()
 	]])
 end
 
+local particles = {}
+local toRemove = {}
+local timer = 0
+local frequency = 0.05
+
+local speedUp = false
+
+function createSnow()
+	local id = 'snow'..tostring(#particles)
+
+	makeAnimatedLuaSprite(id, 'snow_particles')
+	addAnimationByPrefix(id, 'snow', 0, false)
+	setScrollFactor(id, getRandomFloat(1,1.5), getRandomFloat(1,1.5))
+	addLuaSprite(id, true)
+	callMethod('snowEmitter.add', {instanceArg(id)})
+
+	setProperty(id..'.animation.curAnim.curFrame', getRandomInt(0, 7))
+
+	local particle = {
+		id = id,
+		x = getRandomFloat(getProperty('floor.x'), getProperty('floor.width')),
+		y = getProperty('floor.y') - 200,
+		speed = not speedUp and getRandomInt(500, 700) or getRandomInt(1400, 1700),
+		launchAngle = getRandomInt(100, 160),
+		angularVelocity = getRandomInt(-80, 100),
+		lifespan = 10
+	}
+	table.insert(particles, particle)
+end
+
 function onUpdate(elapsed)
 	setProperty('anotherCam.zoom', getProperty('camHUD.zoom'))
 	if not lowQuality then
 		setProperty('evilCam.zoom', getProperty('camGame.zoom'))
 		setProperty('evilCam.scroll.x', getProperty('camGame.scroll.x'))
 		setProperty('evilCam.scroll.y', getProperty('camGame.scroll.y'))
+	end
+
+	timer = timer + elapsed
+	if timer >= frequency then
+		createSnow()
+		timer = 0
+	end
+
+	for i = #particles, 1, -1 do
+		local p = particles[i]
+		p.lifespan = p.lifespan - elapsed
+
+		if p.lifespan <= 0 then
+			removeLuaSprite(p.id, true)
+		else
+			p.x = p.x + math.cos(math.rad(p.launchAngle)) * p.speed * elapsed
+			p.y = p.y + math.sin(math.rad(p.launchAngle)) * p.speed * elapsed
+			setProperty(p.id..'.x', p.x)
+			setProperty(p.id..'.y', p.y)
+
+			setProperty(p.id..'.angle', getProperty(p.id..'.angle') + p.angularVelocity * elapsed)
+
+			setProperty(p.id..'.alpha', getVar('snowAlpha'))
+		end
 	end
 end
 
@@ -209,7 +216,12 @@ function onSongStart()
 end
 
 function onEvent(eventName, value1, value2)
-    if eventName == 'orange' then
+	if eventName == '' then
+		if value1 == 'speedUp' then
+			speedUp = true
+			frequency = 0.04
+		end
+    elseif eventName == 'orange' then
 		if lowQuality and (value1 == 'walk' or value1 == 'die' or value1 == 'idle' or value2 == 'walk' or value2 == 'kill' or value2 == 'carry') then
 			return end
 		
@@ -271,11 +283,23 @@ function onEvent(eventName, value1, value2)
 			playAnim('orange', 'idle')
 			setProperty('orange.y', getProperty('orange.y')+100)
 		elseif value1 == 'intro' then
+			runHaxeCode([[
+				FlxTween.num(getVar('snowAlpha'), 1, 2, {startDelay: 7.5}, (f:Float) -> {
+					setVar('snowAlpha', f);
+				});
+			]])
+
             startTween('leHUd', 'camHUD', {alpha = 1}, 2.5, {startDelay = 9.5})
             startTween('camZoom', 'camGame', {zoom = 0.5}, 12, {ease = 'smootherStepInOut'})
             startTween('camPos', 'camFollow', {y = 500}, 12, {ease = 'smootherStepInOut', startDelay = 0, onComplete = 'unforceCamera'})
 		elseif value1 == 'star' then
 			setProperty('isCameraOnForcedPos', true)
+
+			runHaxeCode([[
+				FlxTween.num(getVar('snowAlpha'), 0, 2, {startDelay: 1.5}, (f:Float) -> {
+					setVar('snowAlpha', f);
+				});
+			]])
 
 			startTween('red', 'redStar', {alpha = 0.9}, 5, {})
 			startTween('bf', 'bfStar', {alpha = 0.9}, 3, {startDelay = 5})
@@ -285,6 +309,12 @@ function onEvent(eventName, value1, value2)
 		elseif value1 == 'down' then
 			doTweenAlpha('byered', 'redStar', 0, 1)
 			doTweenAlpha('byebf', 'bfStar', 0, 1)
+
+			runHaxeCode([[
+				FlxTween.num(getVar('snowAlpha'), 1, 0.5, {startDelay: 1}, (f:Float) -> {
+					setVar('snowAlpha', f);
+				});
+			]])
 
 			startTween('leZoom', 'game', {['camGame.zoom'] = 0.5, defaultCamZoom = 0.5}, 1, {ease = 'smootherStepInOut'})
 			startTween('camPos', 'camFollow', {x = 800, y = 500}, 1, {ease = 'smootherStepInOut', startDelay = 0, onComplete = 'unforceCamera'})
@@ -545,6 +575,8 @@ function onEvent(eventName, value1, value2)
 			setProperty('purple.alpha', 0)
 			setProperty('rose.alpha', 0)
 			setProperty('cyan.alpha', 0)
+
+			setObjectOrder('snowEmitter', getObjectOrder('meltdownBGBack')+1)
 
 			startTween('mbbTween', 'meltdownBGBack', {x = 50, y = 335}, 0.4, {ease = 'smootherStepInOut'})
 			startTween('mblTween', 'meltdownBGLeft', {x = -1100}, 0.2, {})

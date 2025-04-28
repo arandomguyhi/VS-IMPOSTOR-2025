@@ -187,7 +187,7 @@ end
 
 allowCountdown = false
 function onStartCountdown()
-    if not allowCountdown then
+    if not allowCountdown and isStoryMode then
         allowCountdown = true
         sabotageCutscene2ndHalf()
         return Function_Stop
