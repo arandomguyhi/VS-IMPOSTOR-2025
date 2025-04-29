@@ -6,6 +6,7 @@ local customTextMap = {
   ['good'] = 'GOOD',
   ['sick'] = 'SUSSY!' -- SUSSY'S BETTER!!!
 }
+local holdColors = {'purple', 'blue', 'green', 'red'}
 
 function onCreatePost()
     setPropertyFromClass('states.PlayState', 'SONG.splashSkin', 'noteskins/noteSplashes')
@@ -41,6 +42,42 @@ function onCreatePost()
     setProperty('healthBar.y', getProperty('healthBar.y') + (not downscroll and 3 or -21))
     setProperty('scoreTxt.y', getProperty('healthBar.y') + (not downscroll and 45 or -45))
 
+    for v, i in pairs(holdColors) do
+        makeAnimatedLuaSprite('glow'..i, 'noteskins/noteHoldCovers')
+        addAnimationByPrefix('glow'..i, 'holdStart'..i, i..'start', 24, false)
+        addAnimationByPrefix('glow'..i, 'hold'..i, i..'loop', 24, false)
+        addAnimationByPrefix('glow'..i, 'holdEnd'..i, i..'end', 24, false)
+        addOffset('glow'..i, 'hold'..i, 0, 0)
+        addOffset('glow'..i, 'holdEnd'..i, 26, 8)
+        scaleObject('glow'..i, 0.7, 0.7)
+        addLuaSprite('glow'..i, true)
+        setObjectCamera('glow'..i, 'camHUD')
+        setProperty('glow'..i..'.alpha', 0.001)
+
+        makeAnimatedLuaSprite('opGlow'..i, 'noteskins/noteHoldCovers')
+        addAnimationByPrefix('opGlow'..i, 'hold'..i, i..'loop', 24, false)
+        scaleObject('opGlow'..i, 0.7, 0.7)
+        addLuaSprite('opGlow'..i, true)
+        setObjectCamera('opGlow'..i, 'camHUD')
+        setProperty('opGlow'..i..'.alpha', 0.001)
+
+        runHaxeCode([[
+            game.getLuaObject('glow]]..i..[[').animation.finishCallback = (anim:String) -> {
+                switch (anim) {
+                    case 'holdStart]]..i..[[':
+                        game.getLuaObject('glow]]..i..[[').animation.play('hold]]..i..[[');
+                    case 'holdEnd]]..i..[[':
+                        game.getLuaObject('glow]]..i..[[').alpha = 0;
+                }
+            }
+
+            game.getLuaObject('opGlow]]..i..[[').animation.finishCallback = (anim:String) -> {
+                if (anim == 'hold]]..i..[[')
+                    game.getLuaObject('opGlow]]..i..[[').alpha = 0;
+            }
+        ]])
+    end
+
     makeAnimatedLuaSprite('tablet', 'hud/healthBarFG', 0, not downscroll and -38+641 or -143+56)
     scaleObject('tablet', 0.53, 0.53)
     addAnimationByPrefix('tablet', 'idle', 'healthbar', 48, true)
@@ -60,6 +97,10 @@ function onCreatePost()
 	setProperty('ratingText.alpha', 0)
 end
 
+function onUpdatePost()
+    setProperty('tablet.alpha', getProperty('healthBar.alpha'))
+end
+
 function onUpdateScore()
     local str = 'N/A'
     if (getProperty('ratingPercent')*100) >= 98 then str = 'S'
@@ -73,9 +114,40 @@ function onUpdateScore()
     ..'Misses: '..misses..'      '..'Rank: '..str)
 end
 
+function opponentNoteHit(id, noteData, noteType, isSustainNote)
+    if isSustainNote then
+        local noteOffsets = {
+            x = getPropertyFromGroup('opponentStrums', noteData, 'x'),
+            y = getPropertyFromGroup('opponentStrums', noteData, 'y')
+        }
+
+        setProperty('opGlow'..holdColors[noteData+1]..'.alpha', getPropertyFromGroup('opponentStrums', noteData, 'alpha'))
+        playAnim('opGlow'..holdColors[noteData+1], 'hold'..holdColors[noteData+1], true)
+
+        setProperty('opGlow'..holdColors[noteData+1]..'.x', noteOffsets.x)
+        setProperty('opGlow'..holdColors[noteData+1]..'.y', noteOffsets.y+3)
+    end
+end
+
 function goodNoteHit(id, noteData, noteType, isSustainNote)
     if not isSustainNote then
         popUpScore(getPropertyFromGroup('notes', id, 'rating'), getProperty('combo'))
+    else
+        local noteOffsets = {
+            x = getPropertyFromGroup('playerStrums', noteData, 'x'),
+            y = getPropertyFromGroup('playerStrums', noteData, 'y')
+        }
+
+        setProperty('glow'..holdColors[noteData+1]..'.alpha', getPropertyFromGroup('playerStrums', noteData, 'alpha'))
+
+        setProperty('glow'..holdColors[noteData+1]..'.x', noteOffsets.x-20)
+        setProperty('glow'..holdColors[noteData+1]..'.y', noteOffsets.y-13)
+
+        if string.find(getPropertyFromGroup('notes', id, 'animation.curAnim.name'):lower(), 'end') and isSustainNote then
+            playAnim('glow'..holdColors[noteData+1], 'holdEnd'..holdColors[noteData+1])
+        else
+            playAnim('glow'..holdColors[noteData+1], 'hold'..holdColors[noteData+1], true)
+        end
     end
 end
 
@@ -126,4 +198,49 @@ function popUpScore(rateName, leCombo)
 
 		daLoop = daLoop + 1
 	end
+end
+
+function onCountdownStarted()
+    playSound('cancelMenu')
+
+    makeLuaSprite('count', 'get-ready')
+    addLuaSprite('count')
+    runHaxeCode("game.getLuaObject('count').camera = getVar('camPause');")
+
+    scaleObject('count', 0.5, 0.5)
+    screenCenter('count')
+
+    local oldY = getProperty('count.y')
+    setProperty('count.y', screenHeight)
+    startTween('counTween', 'count', {y = oldY}, crochet/1000, {ease = 'cubeInOut'})
+end
+
+function onCountdownTick(tick)
+    setProperty('countdownReady.visible', false)
+    setProperty('countdownSet.visible', false)
+    setProperty('countdownGo.visible', false)
+
+    local time = crochet/1000
+
+    if tick < 4 then
+        scaleObject('count', 0.55, 0.55, false)
+        startTween('countScale', 'count.scale', {x = 0.5, y = 0.5}, time/2, {})
+    end
+
+    if tick == 1 then
+        loadGraphic('count', 'ready')
+        updateHitbox('count')
+        screenCenter('count')
+    elseif tick == 2 then
+        loadGraphic('count', 'set')
+        updateHitbox('count')
+        screenCenter('count')
+    elseif tick == 3 then
+        loadGraphic('count', 'go')
+        updateHitbox('count')
+        screenCenter('count')
+    elseif tick == 4 then
+        startTween('byeCount', 'count', {y = screenHeight}, time, {ease = 'cubeInOut', onComplete = 'removeCount'})
+        function removeCount() removeLuaSprite('count', true) end
+    end
 end

@@ -73,6 +73,39 @@ function onCreatePost()
         setProperty('camHUD.alpha', 0)
         setProperty('camGame.zoom', 0.4)
         setProperty('nigga.alpha', 1)
+
+        if not lowQuality then
+		makeAnimatedLuaSprite('evilGreen', ext..'green', -550, 725)
+		addAnimationByPrefix('evilGreen', 'cutscene', 'scene instance 1', 24, false)
+		scaleObject('evilGreen', 2.3, 2.3, false)
+		setScrollFactor('evilGreen', 1.2, 1.2)
+		setProperty('evilGreen.alpha', 0)
+		addLuaSprite('evilGreen')
+	end
+
+	makeLuaSprite('vignette2', ext..'vignette2')
+	setProperty('vignette2.alpha', 0)
+	addLuaSprite('vignette2')
+
+	runHaxeCode([[
+		var anotherCam = new FlxCamera();
+		anotherCam.bgColor = 0x0;
+
+		var evilCam = new FlxCamera();
+		evilCam.bgColor = 0x0;
+
+		for (cams in [game.camOther, game.camHUD, getVar('camPause')])
+			FlxG.cameras.remove(cams, false);
+		for (cams in [game.camOther, game.camHUD, evilCam, anotherCam, getVar('camPause')])
+			FlxG.cameras.add(cams, false);
+
+                if (!ClientPrefs.data.lowQuality)
+		    game.getLuaObject('evilGreen').camera = evilCam;
+		game.getLuaObject('vignette2').camera = anotherCam;
+
+                setVar('evilCam', evilCam);
+		setVar('anotherCam', anotherCam);
+	]])
     end
 
 	if songName:lower() == 'meltdown' then
@@ -88,40 +121,6 @@ function onCreatePost()
 	end
 
 	setVar('snowAlpha', (songName == 'Sussus Moogus' and 0 or 1))
-
-	if not lowQuality then
-		makeAnimatedLuaSprite('evilGreen', ext..'green', -550, 725)
-		addAnimationByPrefix('evilGreen', 'cutscene', 'scene instance 1', 24, false)
-		scaleObject('evilGreen', 2.3, 2.3, false)
-		setScrollFactor('evilGreen', 1.2, 1.2)
-		setProperty('evilGreen.alpha', 0)
-		addLuaSprite('evilGreen')
-
-		runHaxeCode([[
-			var evilCam = new FlxCamera();
-			evilCam.bgColor = 0x0;
-
-			setVar('evilCam', evilCam);
-		]])
-	end
-
-	makeLuaSprite('vignette2', ext..'vignette2')
-	setProperty('vignette2.alpha', 0)
-	addLuaSprite('vignette2')
-
-	runHaxeCode([[
-		var anotherCam = new FlxCamera();
-		anotherCam.bgColor = 0x0;
-
-		for (cams in [camHUD, camOther])
-			FlxG.cameras.remove(cams, false);
-		for (cams in [camHUD, getVar('evilCam'), anotherCam, camOther])
-			FlxG.cameras.add(cams, false);
-
-		game.getLuaObject('evilGreen').camera = getVar('evilCam');
-		game.getLuaObject('vignette2').camera = anotherCam;
-		setVar('anotherCam', anotherCam);
-	]])
 end
 
 local particles = {}
@@ -202,11 +201,9 @@ end
 
 function onBeatHit()
 	if curBeat % 2 == 0 then
-		if luaSpriteExists('boomBox') and getProperty('boomBom.animation.curAnim.name') == 'sus' then playAnim('boomBox', 'sus', true) end
-		if luaSpriteExists('roseTable') and getProperty('roseTable.animation.curAnim.name') == 'idle' then playAnim('roseTable', 'idle'..everyoneLook) end
-		if luaSpriteExists('greenTable') and getProperty('greenTable.animation.curAnim.name') == 'idle' then playAnim('greenTable', 'idle'..everyoneLook) end
-		if luaSpriteExists('roseTable') and getProperty('roseTable.animation.curAnim.name') == 'idle-peep' then playAnim('roseTable', 'idle-peep'..everyoneLook) end
-		if luaSpriteExists('greenTable') and getProperty('greenTable.animation.curAnim.name') == 'idle-peep' then playAnim('greenTable', 'idle-peep'..everyoneLook) end
+		if luaSpriteExists('boomBox') and getProperty('boomBox.animation.curAnim.name') == 'sus' then playAnim('boomBox', 'sus', true) end
+		if luaSpriteExists('roseTable') then playAnim('roseTable', 'idle'..everyoneLook) end
+		if luaSpriteExists('greenTable') then playAnim('greenTable', 'idle'..everyoneLook) end
 	end
 end
 
@@ -261,7 +258,9 @@ function onEvent(eventName, value1, value2)
 			runHaxeCode([[
 				game.strumLineNotes.camera = getVar('anotherCam');
 				game.notes.camera = getVar('anotherCam');
+                                game.getLuaObject('flashSprite').camera = getVar('evilCam');
 			]])
+                        scaleObject('flashSprite', 5, 5, false)
 
 			setProperty('evilGreen.alpha', 1)
 			doTweenAlpha('vig', 'vignette2', 0.6, 3)
@@ -275,6 +274,8 @@ function onEvent(eventName, value1, value2)
 						game.strumLineNotes.camera = camHUD;
 						game.notes.camera = camHUD;
 					]])
+                                        setObjectCamera('flashSprite', 'camOther')
+                                        scaleObject('flashSprite', 1, 1, false)
 					removeLuaSprite('evilGreen', true) end
 				end
 			end
@@ -332,7 +333,7 @@ function onEvent(eventName, value1, value2)
 		end
     end
 
-	if eventName == 'dialogue' then
+        if eventName == 'dialogue' then
 		if value1 == 'red' then
 			setProperty('redtalk.alpha', 1)
 			if value2 == '1' then
@@ -397,7 +398,9 @@ function onEvent(eventName, value1, value2)
 	if eventName == 'sabotage' then
 		if value1 == 'noOpp' then
 			for _, i in pairs({'healthBar', 'iconP1', 'iconP2', 'scoreTxt'}) do
-				doTweenAlpha('blz'.._, i, 0, 7) end
+				doTweenAlpha('blz'.._, i, 0, 7)
+                                noteTweenAlpha('BZL'.._-1, _-1, 0, 7)
+                        end
 			doTweenAlpha('dect', 'saboDetective', 1, 3)
 			setProperty('healthLoss', 0)
 		elseif value1 == 'drop' then
@@ -408,7 +411,9 @@ function onEvent(eventName, value1, value2)
 			addLuaSprite('boomBoxS') setObjectOrder('boomBoxS', getObjectOrder('gfGroup')+1)
 		elseif value1 == 'oppReturn' then
 			for _, i in pairs({'healthBar', 'iconP1', 'iconP2', 'scoreTxt'}) do
-				doTweenAlpha('blz'.._, i, 1, 5) end
+				doTweenAlpha('blz'.._, i, 1, 5)
+                                noteTweenAlpha('BZL'.._-1, _-1, 0, 7)
+                        end
 
 			for _, i in pairs({'investigationText', 'detectiveUI', 'detectiveIcon', 'flxBar'}) do
 				doTweenY('BZL'.._, i, 1000, 0.7, 'expoIn') end
@@ -425,6 +430,7 @@ function onEvent(eventName, value1, value2)
 			setProperty('saboDetective.idleSuffix', '-alt')
 		elseif value1 == 'obiturary' then
 			playAnim('saboDetective', 'turn', true)
+                        setProperty('saboDetective.specialAnim', true)
 			setProperty('saboDetective.idleSuffix', '')
 		elseif value1 == 'saltyDKFunkin' then
 			doTweenAlpha('spotLight', 'applebar', 0.7, 3)
@@ -450,7 +456,7 @@ function onEvent(eventName, value1, value2)
 		end
 	end
 
-	if eventName == 'speechbubble' then
+        if eventName == 'speechbubble' then
 		if value1 == 'red' then
 			setProperty('speechBubbleBlue.alpha', 1)
 			if value2 == 'intro' then
@@ -600,11 +606,13 @@ function onEvent(eventName, value1, value2)
 			playAnim('roseTable', 'idle-peep')
 			playAnim('cyanTable', 'idle-peep')
 			playAnim('purpleTable', 'idle-peep')
+                        everyoneLook = '-peep'
 		elseif value1 == 'bop' then
 			playAnim('limeTable', 'idle')
 			playAnim('roseTable', 'idle')
 			playAnim('cyanTable', 'idle')
 			playAnim('purpleTable', 'idle')
+                        everyoneLook = ''
 		elseif value1 == 'camMiddle' then
 			setProperty('isCameraOnForcedPos', true)
 			startTween('camPos', 'camFollow', {x = 1025, y = 500}, 1, {ease = 'smootherStepInOut'})
@@ -739,7 +747,7 @@ function buildMeltdownBG()
 
 	makeAnimatedLuaSprite('greenTable', ext..'meltdown/crewInside', -1000, 570)
 	addAnimationByPrefix('greenTable', 'idle', 'GREEN LOOP', 24, false)
-	addAnimationByPrefix('greenTable', 'idle-peep', 'GREENLOOKATRED', 24, false)
+	addAnimationByPrefix('greenTable', 'idle-peep', 'GRELOOKATRED', 24, false)
 	addAnimationByPrefix('greenTable', 'facepalm', 'GREEN FACEPALM', 24, false)
 	addAnimationByPrefix('greenTable', 'loop', 'GREEN ANGER LOOP', 24, true)
 	playAnim('greenTable', 'idle')
@@ -797,14 +805,14 @@ function buildMeltdownBG()
 	scaleObject('cyanTable', 1.1, 1.1, false)
 	addLuaSprite('cyanTable', true)
 
-	makeAnimatedLuaSprite('purpleTable', ext..'meltdown/crewInside', -1600, 650)
+	makeAnimatedLuaSprite('purpleTable', ext..'meltdown/crewInside', 900, 2000)
 	addAnimationByPrefix('purpleTable', 'idle', 'PURPLE MEETING', 24, true)
 	playAnim('purpleTable', 'idle')
 	setScrollFactor('purpleTable', 1.2, 1.2)
 	scaleObject('purpleTable', 1.3, 1.3, false)
 	addLuaSprite('purpleTable', true)
 
-	makeAnimatedLuaSprite('limeTable', ext..'meltdown/crewInside', -1600, 650)
+	makeAnimatedLuaSprite('limeTable', ext..'meltdown/crewInside', 3000, 400)
 	addAnimationByPrefix('limeTable', 'idle', 'LIME MEETING', 24, true)
 	addAnimationByPrefix('limeTable', 'idle-peep', 'LIMELOOK', 24, true)
 	playAnim('limeTable', 'idle')

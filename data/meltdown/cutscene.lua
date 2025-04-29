@@ -6,18 +6,38 @@ function onCreate()
 
 	makeAnimatedLuaSprite('cliff', 'stage/polus/meltdown/cutscene/bg')
 	addAnimationByPrefix('cliff', 'idle', 'polus_cliff', 24, false)
-	callMethod('cutsceneAssets.add', {instanceArg('cliff')})
+	callMethod('cutsceneAssets.insert', {2, instanceArg('cliff')})
 	scaleObject('cliff', 2, 2)
+
+        makeAnimatedLuaSprite('buildings', 'stage/polus/meltdown/cutscene/bg', getProperty('cliff.x') + (996 * getProperty('cliff.scale.x') / 2), getProperty('cliff.y') + (549 * getProperty('cliff.scale.y') / 2))
+	addAnimationByPrefix('buildings', 'idle', 'bg_building', 24, false)
+	scaleObject('buildings', getProperty('cliff.scale.x'), getProperty('cliff.scale.y'))
+	callMethod('cutsceneAssets.insert', {0, instanceArg('buildings')})
+
+        makeAnimatedLuaSprite('lava', 'stage/polus/meltdown/cutscene/bg', getProperty('cliff.x') + (-386 * getProperty('cliff.scale.x') / 2), getProperty('cliff.y') + (2574 * getProperty('cliff.scale.y') / 2))
+	addAnimationByPrefix('lava', 'idle', 'bottom_lava', 24, false)
+	scaleObject('lava', getProperty('cliff.scale.x'), getProperty('cliff.scale.y'))
+	callMethod('cutsceneAssets.insert', {3, instanceArg('lava')})
+
+        makeAnimatedLuaSprite('lavaCover', 'stage/polus/meltdown/cutscene/bg', getProperty('cliff.x') + (-386 * getProperty('cliff.scale.x') / 2), getProperty('cliff.y') + (3155 * getProperty('cliff.scale.y') / 2))
+	addAnimationByPrefix('lavaCover', 'idle', 'upper_lava', 24, false)
+	scaleObject('lavaCover', getProperty('cliff.scale.x'), getProperty('cliff.scale.y'))
+	callMethod('cutsceneAssets.insert', {99, instanceArg('lavaCover')})
 
 	makeAnimatedLuaSprite('crew', 'stage/polus/meltdown/cutscene/bg', getProperty('cliff.x') + (1060 * getProperty('cliff.scale.x') / 2), getProperty('cliff.y') + (398 * getProperty('cliff.scale.y') / 2))
 	addAnimationByPrefix('crew', 'idle', 'bg_crewmates_fuck..my_butt_hurts', 24, false)
 	scaleObject('crew', getProperty('cliff.scale.x'), getProperty('cliff.scale.y'))
-	callMethod('cutsceneAssets.add', {instanceArg('crew')})
+	callMethod('cutsceneAssets.insert', {1, instanceArg('crew')})
 
-	makeAnimatedLuaSprite('buildings', 'stage/polus/meltdown/cutscene/bg', getProperty('cliff.x') + (996 * getProperty('cliff.scale.x') / 2), getProperty('cliff.y') + (549 * getProperty('cliff.scale.y') / 2))
-	addAnimationByPrefix('buildings', 'idle', 'bg_building', 24, false)
-	scaleObject('buildings', getProperty('cliff.scale.x'), getProperty('cliff.scale.y'))
-	callMethod('cutsceneAssets.add', {instanceArg('buildings')})
+        makeAnimatedLuaSprite('lavaSplash', 'stage/polus/meltdown/cutscene/lava_splash', getProperty('cliff.x') + (1700 * getProperty('cliff.scale.x') / 2), getProperty('cliff.y') + (2700 * getProperty('cliff.scale.y') / 2))
+	addAnimationByPrefix('lavaSplash', 'idle', 'lava splash', 24, false)
+	setProperty('lavaSplash.animation.curAnim.looped', false)
+	runHaxeCode("game.getLuaObject('lavaSplash').animation.pause();")
+	scaleObject('lavaSplash', (getProperty('cliff.scale.x') / 2) * 0.9, (getProperty('cliff.scale.y') / 2) * 0.9)
+        setProperty('lavaSplash.alpha', 0)
+	setProperty('lavaSplash.visible', false)
+	callMethod('cutsceneAssets.insert', {5, instanceArg('lavaSplash')})
+	setProperty('lavaSplash.offset.y', 300)
 
 	local charOffsetX = 200
 	local charOffsetY = 150
@@ -30,12 +50,7 @@ function onCreate()
 	addAnimationByPrefix('pushingBF', 'ready', 'bf ready to push', 24, true)
 	addAnimationByPrefix('pushingBF', 'push', 'bf push him', 24, false)
 	playAnim('pushingBF', 'ready')
-	callMethod('cutsceneAssets.add', {instanceArg('pushingBF')})
-
-	makeAnimatedLuaSprite('lava', 'stage/polus/meltdown/cutscene/bg', getProperty('cliff.x') + (-386 * getProperty('cliff.scale.x') / 2), getProperty('cliff.y') + (2574 * getProperty('cliff.scale.y') / 2))
-	addAnimationByPrefix('lava', 'idle', 'bottom_lava', 24, false)
-	scaleObject('lava', getProperty('cliff.scale.x'), getProperty('cliff.scale.y'))
-	callMethod('cutsceneAssets.add', {instanceArg('lava')})
+	callMethod('cutsceneAssets.insert', {6, instanceArg('pushingBF')})
 
 	makeAnimatedLuaSprite('impostor', 'stage/polus/meltdown/cutscene/red_meltdown_cutscene',
 		getProperty('cliff.x') + (1625 * (getProperty('cliff.scale.x') / 2)) + charOffsetX,
@@ -52,7 +67,7 @@ function onCreate()
 	playAnim('impostor', 'nervous')
 	runHaxeCode("game.getLuaObject('impostor').animation.pause();")
 	setProperty('impostor.animation.curAnim.curFrame', 0)
-	callMethod('cutsceneAssets.add', {instanceArg('impostor')})
+	callMethod('cutsceneAssets.insert', {7, instanceArg('impostor')})
 
 	runHaxeCode([[
 		game.getLuaObject('impostor').animation.finishCallback = (anim:String) -> {
@@ -61,24 +76,10 @@ function onCreate()
 		}
 	]])
 
-	makeAnimatedLuaSprite('brdige', 'stage/polus/meltdown/cutscene/bg', getProperty('cliff.x') + (1664 * getProperty('cliff.scale.x') / 2), getProperty('cliff.y') + (600 * getProperty('cliff.scale.y') / 2))
+        makeAnimatedLuaSprite('brdige', 'stage/polus/meltdown/cutscene/bg', getProperty('cliff.x') + (1664 * getProperty('cliff.scale.x') / 2), getProperty('cliff.y') + (600 * getProperty('cliff.scale.y') / 2))
 	addAnimationByPrefix('brdige', 'idle', 'bridge', 24, false)
 	scaleObject('brdige', getProperty('cliff.scale.x'), getProperty('cliff.scale.y'))
-	callMethod('cutsceneAssets.add', {instanceArg('brdige')})
-
-	makeAnimatedLuaSprite('lavaSplash', 'stage/polus/meltdown/cutscene/lava_splash', getProperty('cliff.x') + (1700 * getProperty('cliff.scale.x') / 2), getProperty('cliff.y') + (2700 * getProperty('cliff.scale.y') / 2))
-	addAnimationByPrefix('lavaSplash', 'idle', 'lava splash', 24, false)
-	setProperty('lavaSplash.animation.curAnim.looped', false)
-	runHaxeCode("game.getLuaObject('lavaSplash').animation.pause();")
-	scaleObject('lavaSplash', (getProperty('cliff.scale.x') / 2) * 0.9, (getProperty('cliff.scale.y') / 2) * 0.9)
-	setProperty('lavaSplash.visible', false)
-	callMethod('cutsceneAssets.add', {instanceArg('lavaSplash')})
-	setProperty('lavaSplash.offset.y', 300)
-
-	makeAnimatedLuaSprite('lavaCover', 'stage/polus/meltdown/cutscene/bg', getProperty('cliff.x') + (-386 * getProperty('cliff.scale.x') / 2), getProperty('cliff.y') + (3155 * getProperty('cliff.scale.y') / 2))
-	addAnimationByPrefix('lavaCover', 'idle', 'upper_lava', 24, false)
-	scaleObject('lavaCover', getProperty('cliff.scale.x'), getProperty('cliff.scale.y'))
-	callMethod('cutsceneAssets.add', {instanceArg('lavaCover')})
+	callMethod('cutsceneAssets.insert', {20, instanceArg('brdige')})
 
 	setProperty('cutsceneAssets.visible', false)
 end
@@ -87,9 +88,10 @@ function push()
 	setProperty('camGame.zoom', getProperty('camGame.zoom') + 0.05)
 	startTween('camZoom', 'camGame', {zoom = 0.5}, 1, {ease = 'sineOut'})
 
+        callMethod('cutsceneAssets.remove', {instanceArg('impostor')})
+        callMethod('cutsceneAssets.insert', {21, instanceArg('impostor')})
 	playAnim('pushingBF', 'push')
 	playAnim('impostor', 'getPushed')
-	setObjectOrder('impostor', getObjectOrder('lavaSplash')+10)
 
 	local sc = getProperty('impostor.scale.x')
 
@@ -119,6 +121,7 @@ end
 function splash()
 	callMethodFromClass('flixel.tweens.FlxTween', 'cancelTweensOf', {instanceArg('impostor'), {'scale.x', 'scale.y', 'y', 'x'}})
 	runHaxeCode("game.getLuaObject('lavaSplash').animation.resume();")
+        setProperty('lavaSplash.alpha', 1)
 	setProperty('lavaSplash.visible', true)
 
 	playAnim('impostor', 'thumbsup')
@@ -151,7 +154,7 @@ function onEvent(ev,v1,v2)
 
 			setProperty('bg.alpha', 1)
 			setProperty('stars.alpha', 1)
-			setObjectOrder('bg', getObjectOrder('cliff'))
+			setObjectOrder('bg', getObjectOrder('cutsceneAssets')-1)
 			setObjectOrder('stars', getObjectOrder('bg'))
 
 			runHaxeCode("FlxTween.tween(FlxG.camera, {_fxFadeAlpha: 0}, 0.5);")
