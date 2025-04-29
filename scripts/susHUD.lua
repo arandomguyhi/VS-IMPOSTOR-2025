@@ -37,7 +37,9 @@ function onCreatePost()
     loadGraphic('healthBar.bg', 'hud/healthBarGuide')
     setProperty('healthBar.scale.x', getProperty('healthBar.scale.x') + 0.145)
     setProperty('healthBar.scale.y', getProperty('healthBar.scale.y') + 0.2)
-    setProperty('healthBar.y', getProperty('healthBar.y')+2)
+
+    setProperty('healthBar.y', getProperty('healthBar.y') + (not downscroll and 3 or -21))
+    setProperty('scoreTxt.y', getProperty('healthBar.y') + (not downscroll and 45 or -45))
 
     makeAnimatedLuaSprite('tablet', 'hud/healthBarFG', 0, not downscroll and -38+641 or -143+56)
     scaleObject('tablet', 0.53, 0.53)
