@@ -1,5 +1,3 @@
-luaDebugMode = true
-
 setVar('snowAlpha', 0)
 local ext = 'stage/polus/'
 

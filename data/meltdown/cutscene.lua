@@ -1,5 +1,3 @@
-luaDebugMode = true
-
 function onCreate()
 	createInstance('cutsceneAssets', 'flixel.group.FlxTypedSpriteGroup', {})
 	addInstance('cutsceneAssets', true)

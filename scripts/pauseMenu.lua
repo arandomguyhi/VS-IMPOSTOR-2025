@@ -1,5 +1,4 @@
 -- pretty simple one, maybe getting this better later
-luaDebugMode = true
 local defScale = 0.6
 local curSel = 0
 

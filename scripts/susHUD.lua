@@ -1,5 +1,3 @@
-luaDebugMode = true
-
 local customTextMap = {
   ['shit'] = 'SHIT!',
   ['bad'] = 'ASS',

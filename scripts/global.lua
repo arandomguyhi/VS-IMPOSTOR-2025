@@ -1,5 +1,3 @@
-luaDebugMode = true
-
 function onCreate()
     runHaxeCode("createGlobalCallback('snapCamFollowToPos', function(x,y){parentLua.call('camSnap', [x,y]);});")
 

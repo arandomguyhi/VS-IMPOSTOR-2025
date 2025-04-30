@@ -1,5 +1,3 @@
-luaDebugMode = true
-
 local bfCutOffsets = {
     ["covered-grey"] = {0, 0},
     ["covered"] = {1, -2},
