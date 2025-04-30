@@ -6,19 +6,15 @@ function onCreate()
     makeLuaSprite('flashSprite') makeGraphic('flashSprite', 1280, 720, 'b30000')
     setProperty('flashSprite.alpha', 0)
     setObjectCamera('flashSprite', 'camOther')
-    addLuaSprite('flashSprite')
+    addLuaSprite('flashSprite', true)
 
-    runHaxeCode([[
-        var camPause = new FlxCamera();
-        camPause.bgColor = 0x0;
+    createInstance('camPause', 'flixel.FlxCamera')
+    setProperty('camPause.bgColor', 0x0)
 
-        for (cams in [game.camHUD, game.camOther])
-            FlxG.cameras.remove(cams, false);
-        for (cams in [game.camOther, game.camHUD, camPause]) // yes, camOther is behind camHUD
-            FlxG.cameras.add(cams, false);
-
-        setVar('camPause', camPause);
-    ]])
+    for _, cams in pairs({'camHUD', 'camOther'}) do
+        callMethodFromClass('flixel.FlxG', 'cameras.remove', {instanceArg(cams), false}) end
+    for _, cams in pairs({'camOther', 'camHUD', 'camPause'}) do -- yes, camOther is behind camHUD
+        callMethodFromClass('flixel.FlxG', 'cameras.add', {instanceArg(cams), false}) end
 end
 
 function camSnap(x,y)
@@ -38,27 +34,42 @@ function onEvent(eventName, value1, value2)
     end
 
     if eventName ~= 'camTween' then return end
-
-    local splitV2 = stringSplit(value2, ',')
-    local duration, easing = splitV2[1], splitV2[2]
-
     if value1 == '' then
         setProperty('isCameraOnForcedPos', false)
         return
     end
 
-    if value1:find(',') then
-        local splitV1 = stringSplit(value1, ',')
-        local posX, posY, zoom = splitV1[1], splitV1[2], splitV1[3]
+    setProperty('isCameraOnForcedPos', true)
+    local coords = stringSplit(value1, ',')
+    local timing = stringSplit(value2, ',')
 
-        setProperty('isCameraOnForcedPos', true)
-        startTween('camPosEvent', 'camFollow', {x = posX, y = posY}, duration, {ease = easing})
+    if value2 == '' and #coords >= 2 then
+       local x = tonumber(coords[1])
+       local y = tonumber(coords[2])
+       callMethod('camFollow.setPosition', {x, y})
 
-        if zoom then
-            startTween('zoomEvent', 'game', {defaultCamZoom = zoom}, duration, {ease = easing})
+       if #coords == 3 then
+           local zoom = tonumber(coords[3])
+           setProperty('camGame.zoom', zoom)
+           setProperty('defaultCamZoom', zoom)
+       end
+       return
+    end
+
+    if #coords == 1 and #timing == 2 then
+        local leZoom, leTime, easingMethod = tonumber(value1), tonumber(timing[1]), tostring(timing[2])
+        startTween('zoomEvent', 'game', {['camGame.zoom'] = leZoom, defaultCamZoom = leZoom}, leTime, {ease = easingMethod})
+        return
+    end
+
+    if (#coords == 2 or #coords == 3) and #timing == 2 then
+        local x, y = tonumber(coords[1]), tonumber(coords[2])
+        local time, easingMethod = tonumber(timing[1]), tostring(timing[2])
+
+        startTween('camPosEvent', 'camFollow', {x = x, y = y}, time, {ease = easingMethod})
+        if #coords == 3 then
+            local zoom = tonumber(coords[3])
+            startTween('zoomEvent', 'game', {defaultCamZoom = zoom}, time, {ease = easingMethod})
         end
-    else
-        startTween('zoomEvent', 'camGame', {zoom = value1}, duration, {ease = easing})
-        setProperty('defaultCamZoom', value1)
     end
 end

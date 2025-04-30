@@ -8,36 +8,29 @@ local rv = 0
 local bv = 0
 
 function onCreate()
-	-- 0
     makeAnimatedLuaSprite('bg', ext..'sky', -832, -974) addAnimationByPrefix('bg', 'sky', 'sky', 0, false)
     scaleObject('bg', 2, 2)
     setScrollFactor('bg', 0.3, 0.3)
 
-	-- 0
     makeAnimatedLuaSprite('stars', ext..'sky', -832, -974) addAnimationByPrefix('stars', 'stars', 'stars', 0, false)
-	scaleObject('stars', 2, 2)
+    scaleObject('stars', 2, 2)
     setScrollFactor('stars', 1.1, 1.1)
 
-	-- 2
     makeAnimatedLuaSprite('mountains', ext..'bg2', -1569, -185) addAnimationByPrefix('mountains', 'bg', 'bgBack', 0, false)
     setScrollFactor('mountains', 0.8, 0.8)
 
-	-- 2
     makeAnimatedLuaSprite('mountains2', ext..'bg2', -1467, -25) addAnimationByPrefix('mountains2', 'bg', 'bgFront', 0, false)
     setScrollFactor('mountains2', 0.9, 0.9)
 
-	-- 2
     makeAnimatedLuaSprite('floor', ext..'bg2', -1410, -139) addAnimationByPrefix('floor', 'bg', 'groundnew', 0, false)
 
-	createInstance('snowEmitter', 'flixel.group.FlxTypedSpriteGroup', {})
-	addInstance('snowEmitter', true)
+    createInstance('snowEmitter', 'flixel.group.FlxTypedSpriteGroup', {})
+    addInstance('snowEmitter', true)
 
-	-- 3
     makeAnimatedLuaSprite('thingy', ext..'guylmao', 2468, -115)
     addAnimationByPrefix('thingy', 'idle', 'REACTOR_THING', 24, true)
     playAnim('thingy', 'idle')
 
-	-- 4
     makeLuaSprite('thingy2', ext..'thing front', 2467, 269)
 
     makeLuaSprite('vignette', ext..'polusvignette')
@@ -87,25 +80,20 @@ function onCreatePost()
 	setProperty('vignette2.alpha', 0)
 	addLuaSprite('vignette2')
 
-	runHaxeCode([[
-		var anotherCam = new FlxCamera();
-		anotherCam.bgColor = 0x0;
+        createInstance('anotherCam', 'flixel.FlxCamera')
+        setProperty('anotherCam.bgColor', 0x0)
 
-		var evilCam = new FlxCamera();
-		evilCam.bgColor = 0x0;
+        createInstance('evilCam', 'flixel.FlxCamera')
+        setProperty('evilCam.bgColor', 0x0)
 
-		for (cams in [game.camOther, game.camHUD, getVar('camPause')])
-			FlxG.cameras.remove(cams, false);
-		for (cams in [game.camOther, game.camHUD, evilCam, anotherCam, getVar('camPause')])
-			FlxG.cameras.add(cams, false);
+        for _, cams in pairs({'camOther', 'camHUD', 'camPause'}) do
+            callMethodFromClass('flixel.FlxG', 'cameras.remove', {instanceArg(cams), false}) end
+        for _, cams in pairs({'camOther', 'camHUD', 'evilCam', 'anotherCam', 'camPause'}) do
+            callMethodFromClass('flixel.FlxG', 'cameras.add', {instanceArg(cams), false}) end
 
-                if (!ClientPrefs.data.lowQuality)
-		    game.getLuaObject('evilGreen').camera = evilCam;
-		game.getLuaObject('vignette2').camera = anotherCam;
-
-                setVar('evilCam', evilCam);
-		setVar('anotherCam', anotherCam);
-	]])
+        if not lowQuality then
+            setToCamera('evilGreen', 'evilCam') end
+        setToCamera('vignette2', 'anotherCam')
     end
 
 	if songName:lower() == 'meltdown' then
@@ -258,8 +246,8 @@ function onEvent(eventName, value1, value2)
 			runHaxeCode([[
 				game.strumLineNotes.camera = getVar('anotherCam');
 				game.notes.camera = getVar('anotherCam');
-                                game.getLuaObject('flashSprite').camera = getVar('evilCam');
 			]])
+                        setToCamera('flashSprite', 'evilCam')
                         scaleObject('flashSprite', 5, 5, false)
 
 			setProperty('evilGreen.alpha', 1)
@@ -412,7 +400,7 @@ function onEvent(eventName, value1, value2)
 		elseif value1 == 'oppReturn' then
 			for _, i in pairs({'healthBar', 'iconP1', 'iconP2', 'scoreTxt'}) do
 				doTweenAlpha('blz'.._, i, 1, 5)
-                                noteTweenAlpha('BZL'.._-1, _-1, 0, 7)
+                                noteTweenAlpha('getBack'.._-1, _-1, 1, 5)
                         end
 
 			for _, i in pairs({'investigationText', 'detectiveUI', 'detectiveIcon', 'flxBar'}) do
@@ -664,7 +652,6 @@ function onEvent(eventName, value1, value2)
 end
 
 function buildMeltdownBG()
-	-- 5
 	makeLuaSprite('meltdownBGBack', ext..'meltdown/buildingsbg', 50, 4000)
 	setScrollFactor('meltdownBGBack', 0.85, 0.85)
 	addLuaSprite('meltdownBGBack')
@@ -685,7 +672,6 @@ function buildMeltdownBG()
 	playAnim('rose', 'walk')
 	addLuaSprite('rose')
 
-	-- 6
 	makeLuaSprite('meltdownBGRight', ext..'meltdown/wallBGRight', ((getProperty('meltdownBGLeft.width')) + getProperty('meltdownBGLeft.x')) + 4000, getProperty('meltdownBGLeft.y'))
 	addLuaSprite('meltdownBGRight')
 	setProperty('meltdownBGRight.alpha', 0)
@@ -820,6 +806,8 @@ function buildMeltdownBG()
 	scaleObject('limeTable', 1.3, 1.3, false)
 	addLuaSprite('limeTable', true)
 end
+
+function setToCamera(obj, cam) runHaxeCode("game.getLuaObject('"..obj.."').camera = getVar('"..cam.."');") end
 
 function unforceCamera()
 	setProperty('isCameraOnForcedPos', false)
