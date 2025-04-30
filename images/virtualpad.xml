@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="virtualpad.png">
+<SubTexture name="down0000" x="0" y="0" width="126" height="126" frameX="-3" frameY="-2" frameWidth="132" frameHeight="135" />
+<SubTexture name="downPressed0000" x="126" y="0" width="126" height="126" frameX="-3" frameY="-2" frameWidth="132" frameHeight="135" />
+<SubTexture name="downPressed0001" x="0" y="250" width="127" height="118" frameX="-2" frameY="-11" frameWidth="132" frameHeight="135" />
+<SubTexture name="up0000" x="0" y="126" width="126" height="124" frameX="-3" frameY="-2" frameWidth="132" frameHeight="135" />
+<SubTexture name="upPressed0000" x="126" y="126" width="126" height="124" frameX="-3" frameY="-2" frameWidth="132" frameHeight="135" />
+<SubTexture name="upPressed0001" x="127" y="250" width="127" height="117" frameX="-2" frameY="-11" frameWidth="132" frameHeight="135" />
+<SubTexture name="a0000" x="252" y="0" width="126" height="124" frameX="-3" frameY="-2" frameWidth="132" frameHeight="135" />
+<SubTexture name="aPressed0000" x="252" y="124" width="126" height="123" frameX="-3" frameY="-3" frameWidth="132" frameHeight="135" />
+<SubTexture name="aPressed0001" x="378" y="0" width="126" height="115" frameX="-3" frameY="-11" frameWidth="132" frameHeight="135" />
+</TextureAtlas>

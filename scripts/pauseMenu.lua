@@ -1,5 +1,5 @@
 -- pretty simple one, maybe getting this better later
-
+luaDebugMode = true
 local defScale = 0.6
 local curSel = 0
 
@@ -10,6 +10,8 @@ end
 
 function onCustomSubstateCreate(name)
     if name == 'ImpostorPause' then
+        setPropertyFromClass('flixel.FlxG', 'mouse.visible', true)
+
         playSound('../music/pause_theme', 0, 'pauseSong')
         soundFadeIn('pauseSong', 0.5, 0, 0.7)
 
@@ -48,7 +50,42 @@ function onCustomSubstateCreate(name)
         newButton(getProperty('resumeButton.x'), getProperty('optionButton.y') + getProperty('optionButton.height'), 'exit')
         callMethod('buttons.add', {instanceArg('exitButton')})
 
-        changeSel()
+        if buildTarget ~= 'windows' then
+            makeAnimatedLuaSprite('upButton', 'virtualpad', 10, 490)
+            addAnimationByPrefix('upButton', 'static', 'up', 0, false)
+            addAnimationByPrefix('upButton', 'press', 'upPressed', 24, false)
+            scaleObject('upButton', 0.85, 0.85)
+            insertToCustomSubstate('upButton')
+            runHaxeCode([[
+                game.getLuaObject('upButton').animation.finishCallback = (anim:String) -> {
+                    if (anim == 'press') game.getLuaObject('upButton').animation.play('static');
+                }
+            ]])
+
+            makeAnimatedLuaSprite('downButton', 'virtualpad', 10, getProperty('upButton.y') + getProperty('upButton.height'))
+            addAnimationByPrefix('downButton', 'static', 'down', 0, false)
+            addAnimationByPrefix('downButton', 'press', 'downPressed', 24, false)
+            scaleObject('downButton', 0.85, 0.85)
+            insertToCustomSubstate('downButton')
+            runHaxeCode([[
+                game.getLuaObject('downButton').animation.finishCallback = (anim:String) -> {
+                    if (anim == 'press') game.getLuaObject('downButton').animation.play('static');
+                }
+            ]])
+
+            makeAnimatedLuaSprite('aButton', 'virtualpad', 1160, getProperty('upButton.y') + getProperty('upButton.height'))
+            addAnimationByPrefix('aButton', 'static', 'a', 0, false)
+            addAnimationByPrefix('aButton', 'press', 'aPressed', 24, false)
+            scaleObject('aButton', 0.85, 0.85)
+            insertToCustomSubstate('aButton')
+            runHaxeCode([[
+                game.getLuaObject('aButton').animation.finishCallback = (anim:String) -> {
+                    if (anim == 'press') game.getLuaObject('aButton').animation.play('static');
+                }
+            ]])
+        end
+
+            changeSel()
     end
 end
 
@@ -59,25 +96,44 @@ function onCustomSubstateUpdatePost(name, elapsed)
         centerOn('option', 'optionButton', 'XY')
         centerOn('exit', 'exitButton', 'XY')
 
+        if buildTarget ~= 'windows' then
+            if callMethodFromClass('flixel.FlxG', 'mouse.overlaps', {instanceArg('upButton'), instanceArg('camPause')}) and mouseClicked() then
+                playAnim('upButton', 'press')
+                changeSel(-1)
+            end
+            if callMethodFromClass('flixel.FlxG', 'mouse.overlaps', {instanceArg('downButton'), instanceArg('camPause')}) and mouseClicked() then
+                playAnim('downButton', 'press')
+                changeSel(1)
+            end
+            if callMethodFromClass('flixel.FlxG', 'mouse.overlaps', {instanceArg('aButton'), instanceArg('camPause')}) and mouseClicked() then
+                playAnim('aButton', 'press')
+                handleSelected()
+            end
+        end
+
         if keyJustPressed('down') then changeSel(1)
         elseif keyJustPressed('up') then changeSel(-1) end
 
         if getProperty('controls.ACCEPT') then
-            if curSel == 0 then
-                closeCustomSubstate()
-            elseif curSel == 1 then
-                restartSong()
-            elseif curSel == 2 then
-                runHaxeCode([[
-                    import backend.MusicBeatState;
-                    import options.OptionsState;
-                    MusicBeatState.switchState(new OptionsState());
-                    OptionsState.onPlayState = true;
-                ]])
-            elseif curSel == 3 then
-                exitSong()
-            end
+            handleSelected()
         end
+    end
+end
+
+function handleSelected()
+    if curSel == 0 then
+        closeCustomSubstate()
+    elseif curSel == 1 then
+        restartSong()
+    elseif curSel == 2 then
+        runHaxeCode([[
+            import backend.MusicBeatState;
+            import options.OptionsState;
+            MusicBeatState.switchState(new OptionsState());
+            OptionsState.onPlayState = true;
+        ]])
+    elseif curSel == 3 then
+        exitSong()
     end
 end
 
