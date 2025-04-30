@@ -202,8 +202,8 @@ end
 function onBeatHit()
 	if curBeat % 2 == 0 then
 		if luaSpriteExists('boomBox') and getProperty('boomBox.animation.curAnim.name') == 'sus' then playAnim('boomBox', 'sus', true) end
-		if luaSpriteExists('roseTable') then playAnim('roseTable', 'idle'..everyoneLook) end
-		if luaSpriteExists('greenTable') then playAnim('greenTable', 'idle'..everyoneLook) end
+		if luaSpriteExists('roseTable') and getProperty('roseTable.animation.curAnim.name') == 'idle'..everyoneLook then playAnim('roseTable', 'idle'..everyoneLook) end
+		if luaSpriteExists('greenTable') and getProperty('greenTable.animation.curAnim.name') == 'idle'..everyoneLook then playAnim('greenTable', 'idle'..everyoneLook) end
 	end
 end
 

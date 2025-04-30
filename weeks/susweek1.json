@@ -14,6 +14,7 @@
 	"weekBackground": "polus",
 	
 	"storyName": "Polus Problems",
+        "difficulties": "Normal, Hard",
 	"weekBefore": "tutorial",
 	"weekName": "week1",
 	"startUnlocked": true,

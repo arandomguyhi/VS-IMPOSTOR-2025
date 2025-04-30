@@ -38,14 +38,12 @@ function onCreate()
         scaleObject('redCutscene', 0.9, 0.9, false)
         playAnim('redCutscene', 'mad')
         setProperty('redCutscene.visible', false)
-        setObjectOrder('redCutscene', 6)
-        addLuaSprite('redCutscene')
+        addLuaSprite('redCutscene', true)
 
         makeAnimatedLuaSprite('gunshot', 'stage/polus/sabotagecutscene/gunshot', getProperty('redCutscene.x')+515, getProperty('redCutscene.y')+90)
         addAnimationByPrefix('gunshot', 'shot', 'stupid impact0', 24, false)
         scaleObject('gunshot', 0.9, 0.9, false)
         setProperty('gunshot.visible', false)
-        setObjectOrder('gunshot', 2000)
         addLuaSprite('gunshot', true)
     end
 end
@@ -72,32 +70,47 @@ function goodNoteHit(_,noteData)
     end
 end
 
---[[function sabotageCutscene1stHalf()
-{
-	isCameraOnForcedPos = true;
-	camZooming = false;
-	dadGroup.visible = false;
-	redCutscene.visible = true;
-	FlxTween.tween(camFollow, {x: 1025, y: 500}, 2, {ease: FlxEase.expoOut});
-	FlxTween.tween(FlxG.camera, {zoom: 0.65}, 2, {ease: FlxEase.expoOut});
-	FlxTween.tween(camHUD, {alpha: 0}, 0.75, {ease: FlxEase.expoOut});
-	FlxG.sound.play(Paths.sound('moogusCutscene'), 1);
-	redCutscene.animation.play('mad');
-	redCutscene.animation.onFinish.add((mad)->{
-		var blackSprite = global.get('blackSprite');
-		blackSprite.alpha = 1;
-		blackSprite.cameras = [camGame];
-		blackSprite.zIndex = 1900;
-		blackSprite.scale.set(3000, 2000);
-		refreshZ();
-		gunshot.visible = true;
-		gunshot.animation.play('shot');
-		gunshot.animation.onFinish.add((mad)->{
-			gunshot.visible = false;
-		});
-		new FlxTimer().start(2, function(tmr:FlxTimer) {
-			endSong();
-			FlxTransitionableState.skipNextTransOut = true;
-		});
-	});
-}]]
+function onEndSong()
+    if not allowToEnd and isStoryMode then
+        allowToEnd = true
+        sabotageCutscene1stHalf()
+
+        return Function_Stop
+    end
+end
+
+function sabotageCutscene1stHalf()
+    setProperty('isCameraOnForcedPos', true)
+    setProperty('camZooming', false)
+    setProperty('dadGroup.visible', false)
+    setProperty('redCutscene.visible', true)
+    startTween('camPos', 'camFollow', {x = 1025, y = 500}, 2, {ease = 'expoOut'})
+    startTween('camZoom', 'camGame', {zoom = 0.65}, 2, {ease = 'expoOut'})
+    doTweenAlpha('noHUD', 'camHUD', 0, 0.75, 'expoOut')
+    playSound('moogusCutscene')
+    playAnim('redCutscene', 'mad')
+    runHaxeCode([[
+        game.getLuaObject('redCutscene').animation.finishCallback = (mad:String) -> {
+            parentLua.call('endCut', ['']);
+        }
+    ]])
+end
+
+function endCut()
+    setProperty('blackSprite.alpha', 1)
+    setObjectCamera('blackSprite', 'camGame')
+    setObjectOrder('blackSprite', getObjectOrder('gunshot')+1)
+    scaleObject('blackSprite', 3000, 2000, false)
+    setProperty('gunshot.visible', true)
+    playAnim('gunshot', 'shot')
+    runHaxeCode([[
+        game.getLuaObject('gunshot').animation.finishCallback = (mad:String) -> {
+            game.getLuaObject('gunshot').visible = false;
+        }
+    ]])
+    runTimer('endLeSong', 2)
+    onTimerCompleted = function(tag) if tag == 'endLeSong' then
+        endSong()
+        setPropertyFromClass('flixel.addons.transition.FlxTransitionableState', 'skipNextTransOut', true) end
+    end
+end
