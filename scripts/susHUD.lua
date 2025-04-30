@@ -189,3 +189,16 @@ function popUpScore(rateName, leCombo)
 		daLoop = daLoop + 1
 	end
 end
+
+function onCountdownStarted()
+    if isStoryMode then
+        for i = 0,3 do
+            setPropertyFromGroup('strumLineNotes', i, 'texture', 'noteskins/amongRedNoteAlt')
+        end
+        for i = 0, getProperty('unspawnNotes.length')-1 do
+            if getPropertyFromGroup('unspawnNotes', i, 'isSustainNote') then
+                setPropertyFromGroup('unspawnNotes', i, 'offsetX', 50)
+            end
+        end
+    end
+end
