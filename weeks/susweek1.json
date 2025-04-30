@@ -8,15 +8,15 @@
 	"beanDiffs": [2,3],
 	"weekCharacters": [
 		"",
-		"bf",
-		"gf"
+		"",
+		""
 	],
 	"weekBackground": "polus",
 	
 	"storyName": "Polus Problems",
-        "difficulties": "Normal, Hard",
+        "difficulties": "Hard",
 	"weekBefore": "tutorial",
-	"weekName": "week1",
+	"weekName": "susweek1",
 	"startUnlocked": true,
 
 	"hideStoryMode": false,

@@ -4975,6 +4975,9 @@
 		"validScore": true,
 		"needsVoices": true,
 		"stage": "polus",
+		"arrowSkin": "noteskins/amongBfNoteAlt",
+		"splashSkin": "noteskins/noteSplashes",
+		"disableNoteRGB": true,
 		"speed": 2.7,
 		"bpm": 155,
 		"lanes": 2

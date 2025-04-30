@@ -3,6 +3,8 @@
 		
 		"player1": "bfdiddy",
 		"player2": "dk",
+		"arrowSkin": "../dk/noteskins/dkNotes",
+		"disableNoteRGB": true,
 		"notes": [
 			{
 				"lengthInSteps": 16,

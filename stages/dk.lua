@@ -64,25 +64,19 @@ function onCreate()
 end
 
 function onCreatePost()
-    setPropertyFromClass('states.PlayState', 'SONG.arrowSkin', '../dk/noteskins/dkNotes')
-
     for i = 0, 3 do
         setProperty('opponentStrums.members['..i..'].alpha', 0)
 
         setProperty('playerStrums.members['..i..'].scale.x', 0.7*4)
         setProperty('playerStrums.members['..i..'].scale.y', 0.7*4)
         updateHitboxFromGroup('playerStrums', i)
-
         setProperty('playerStrums.members['..i..'].x', _G['defaultPlayerStrumX'..i] + 50)
-        setPropertyFromGroup('playerStrums', i, 'rgbShader.enabled', false)
     end
 
     for i = 0, getProperty('unspawnNotes.length')-1 do
         setPropertyFromGroup('unspawnNotes', i, 'scale.x', 0.7*4)
         setPropertyFromGroup('unspawnNotes', i, 'scale.y', 0.7*4)
         updateHitboxFromGroup('unspawnNotes', i)
-
-        setPropertyFromGroup('unspawnNotes', i, 'rgbShader.enabled', false)
         setPropertyFromGroup('unspawnNotes', i, 'noteSplashData.disabled', true)
     end
 

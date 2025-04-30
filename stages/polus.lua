@@ -6,7 +6,6 @@ local ext = 'stage/polus/'
 local everyoneLook = ''
 local rv = 0
 local bv = 0
-
 function onCreate()
     makeAnimatedLuaSprite('bg', ext..'sky', -832, -974) addAnimationByPrefix('bg', 'sky', 'sky', 0, false)
     scaleObject('bg', 2, 2)
@@ -68,7 +67,7 @@ function onCreatePost()
         setProperty('nigga.alpha', 1)
 
         if not lowQuality then
-		makeAnimatedLuaSprite('evilGreen', ext..'green', -550, 725)
+		makeAnimatedLuaSprite('evilGreen', ext..'green', -550, 760)
 		addAnimationByPrefix('evilGreen', 'cutscene', 'scene instance 1', 24, false)
 		scaleObject('evilGreen', 2.3, 2.3, false)
 		setScrollFactor('evilGreen', 1.2, 1.2)

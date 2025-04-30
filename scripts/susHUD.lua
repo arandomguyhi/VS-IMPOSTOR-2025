@@ -9,20 +9,10 @@ local customTextMap = {
 local holdColors = {'purple', 'blue', 'green', 'red'}
 
 function onCreatePost()
-    setPropertyFromClass('states.PlayState', 'SONG.splashSkin', 'noteskins/noteSplashes')
-
-    for i = 0, 7 do
-        setPropertyFromGroup('strumLineNotes', i, 'texture', 'noteskins/amongBfNoteAlt')
-        setPropertyFromGroup('strumLineNotes', i%4, 'texture', 'noteskins/amongRedNoteAlt')
+    for i = 0,3 do
+        setPropertyFromGroup('strumLineNotes', i, 'texture', 'noteskins/amongRedNoteAlt')
     end
-
     for i = 0, getProperty('unspawnNotes.length')-1 do
-        if getPropertyFromGroup('unspawnNotes', i, 'mustPress') then
-            setPropertyFromGroup('unspawnNotes', i, 'texture', 'noteskins/amongBfNoteAlt')
-        else
-            setPropertyFromGroup('unspawnNotes', i, 'texture', 'noteskins/amongRedNoteAlt')
-        end
-
         if getPropertyFromGroup('unspawnNotes', i, 'isSustainNote') then
             setPropertyFromGroup('unspawnNotes', i, 'offsetX', 50)
         end

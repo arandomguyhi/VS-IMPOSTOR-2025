@@ -33,6 +33,14 @@ function onEvent(eventName, value1, value2)
         end
     end
 
+    if eventName == 'Set Cam Zoom' then
+        if value2 == '' then
+            setProperty('defaultCamZoom', tonumber(value1))
+        else
+            startTween('j', 'game', {defaultCamZoom = tonumber(value1)}, tonumber(value2), {})
+        end
+    end
+
     if eventName ~= 'camTween' then return end
     if value1 == '' then
         setProperty('isCameraOnForcedPos', false)
@@ -71,6 +79,29 @@ function onEvent(eventName, value1, value2)
             local zoom = tonumber(coords[3])
             startTween('zoomEvent', 'game', {defaultCamZoom = zoom}, time, {ease = easingMethod})
         end
+    end
+end
+
+function onGameOverStart()
+    makeLuaSprite('efecto','defeat effect',getMidpointX('boyfriend')-400,getMidpointY('boyfriend')-250)
+    scaleObject('efecto',0.044,1)
+    setProperty('efecto.alpha',0)
+    addLuaSprite('efecto')
+
+    makeLuaSprite('gameover','game over',getMidpointX('boyfriend')-540,getMidpointY('boyfriend')-500)
+    setProperty('gameover.alpha',0)
+    addLuaSprite('gameover')
+
+    makeLuaSprite('textt','controls_death',0,670)
+    setObjectCamera('textt','camOther')
+    addLuaSprite('textt')
+
+    startTween('gZoom', 'camGame', {zoom = getProperty('defaultCamZoom') + 0.3}, 3, {startDelay = 1.5, onComplete = 'effects'})
+    function effects()
+        doTweenAlpha('aa','efecto',1,1.5,'sineInOut')
+        doTweenX('aaa','efecto.scale',4.74,3,'quadOut')
+        doTweenAlpha('aatula','gameover',1,2,'quadOut')
+        doTweenY('aaaAA','gameover',350,1.5,'quadOut')
     end
 end
 
