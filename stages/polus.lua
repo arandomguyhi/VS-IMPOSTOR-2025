@@ -743,7 +743,7 @@ function buildMeltdownBG()
 	addLuaText('investigationText')
 
 	makeAnimatedLuaSprite('roseTable', ext..'meltdown/crewInside', 3000, 370)
-	addAnimationByPrefix('roseTable', 'idle', 'MEETING ROSE', 24, false)
+	addAnimationByPrefix('roseTable', 'idle', 'METING ROSE', 24, false)
 	addAnimationByPrefix('roseTable', 'idle-peep', 'LOOKING ROSE', 24, false)
 	playAnim('roseTable', 'idle')
 	scaleObject('roseTable', 0.9, 0.9, false)

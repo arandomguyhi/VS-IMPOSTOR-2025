@@ -6,7 +6,7 @@ local bfCutOffsets = {
     ["trans"] = {6, 35}
 }
 
-local devCutscene = false
+local devCutscene = true
 local detective = false
 
 function startInvestigationCountdown(seconds)
@@ -91,7 +91,7 @@ function onCreate()
         addAnimationByIndices('redCutscene', 'idle', 'red AWKWARD0', {0}, 24, false)
         addAnimationByPrefix('redCutscene', 'trans', 'red transition back', 24, false)
         scaleObject('redCutscene', 0.9, 0.9, false)
-        addLuaSprite('redCutscene', true)
+        addLuaSprite('redCutscene')
 
         -- 2020
         makeLuaSprite('anotherBlackSprite', nil, 600, 0)
@@ -185,7 +185,7 @@ end
 
 allowCountdown = false
 function onStartCountdown()
-    if not allowCountdown and isStoryMode then
+    if not allowCountdown then
         allowCountdown = true
         sabotageCutscene2ndHalf()
         return Function_Stop

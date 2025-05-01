@@ -84,7 +84,3 @@ function onTimerCompleted(t)
     elseif t:find('gfstr') then gfRows[key] = nil
     end
 end
-
-function onTweenCompleted(t)
-    if t:find('Ghost') then removeLuaSprite(t, true) end
-end

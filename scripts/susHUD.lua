@@ -87,7 +87,7 @@ function onUpdateScore()
     elseif (getProperty('ratingPercent')*100) >= 80 then str = 'B'
     elseif (getProperty('ratingPercent')*100) >= 70 then str = 'C'
     elseif (getProperty('ratingPercent')*100) >= 60 then str = 'D'
-    else str = 'F' end
+    elseif (getProperty('ratingPercent')*100) > 0 then str = 'F' end
 
     setTextString('scoreTxt', 'Score: '..callMethodFromClass('flixel.util.FlxStringUtil', 'formatMoney', {score, false})..'      '
     ..'Misses: '..misses..'      '..'Rank: '..str)
@@ -127,6 +127,12 @@ function goodNoteHit(id, noteData, noteType, isSustainNote)
         else
             playAnim('glow'..holdColors[noteData+1], 'hold'..holdColors[noteData+1], true)
         end
+    end
+end
+
+function noteMiss(_,noteData,_,isSustainNote)
+    if isSustainNote then
+        setProperty('glow'..holdColors[noteData+1]..'.alpha', 0)
     end
 end
 
